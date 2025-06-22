@@ -5,7 +5,7 @@ const connectDB = async () => {
     const uri = process.env.MONGODB_URI;
 
     await mongoose.connect(uri);  // No options needed in Mongoose v6+
-
+    console.log(MONGODB_URI);
     console.log('MongoDB Connected');
   } catch (err) {
     console.error('MongoDB Connection Error:', err.message);
