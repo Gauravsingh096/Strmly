@@ -1,7 +1,6 @@
 const Video = require('../models/Video');
 const User = require('../models/User');
 
-// Upload video
 exports.uploadVideo = async (req, res) => {
   try {
     const { title, description } = req.body;
@@ -21,7 +20,6 @@ exports.uploadVideo = async (req, res) => {
   }
 };
 
-// Get video feed
 exports.getVideos = async (req, res) => {
   try {
     const videos = await Video.find()

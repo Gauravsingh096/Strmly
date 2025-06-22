@@ -3,7 +3,6 @@ const router = express.Router();
 const { check, validationResult } = require('express-validator'); 
 const authController = require('../controllers/authController');
 
-// Middleware to handle validation errors
 const validate = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -12,7 +11,6 @@ const validate = (req, res, next) => {
   next();
 };
 
-// Signup route
 router.post(
   '/signup',
   [
@@ -23,8 +21,6 @@ router.post(
   validate,
   authController.signup
 );
-
-// Login route
 router.post(
   '/login',
   [
@@ -35,7 +31,6 @@ router.post(
   authController.login
 );
 
-// Profile route
 router.get('/profile', require('../middleware/auth'), authController.getProfile);
 
 module.exports = router;

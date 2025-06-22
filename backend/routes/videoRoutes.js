@@ -5,7 +5,6 @@ const auth = require("../middleware/auth");
 const upload = require("../middleware/upload");
 const { check } = require("express-validator"); // ADD THIS IMPORT
 
-// Upload video
 router.post(
   "/upload",
   auth,
@@ -17,7 +16,6 @@ router.post(
   videoController.uploadVideo
 );
 
-// Get video feed
 router.get("/videos", videoController.getVideos);
 
 module.exports = router;

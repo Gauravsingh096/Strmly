@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext.js';
-// Add at the top:
 import axios from 'axios';
 const Upload = () => {
     const [title, setTitle] = useState('');
