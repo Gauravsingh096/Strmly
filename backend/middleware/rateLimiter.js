@@ -1,0 +1,9 @@
+const rateLimit = require('express-rate-limit');
+
+const limiter = rateLimit({
+  windowMs: process.env.RATE_LIMIT_WINDOW * 60 * 1000, // Minutes
+  max: process.env.RATE_LIMIT_MAX,
+  message: 'Too many requests, please try again later'
+});
+
+module.exports = limiter;
